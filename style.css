@@ -1,0 +1,253 @@
+/* ===== Reset minimal ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===== Couleurs principales ===== */
+:root {
+  --cream: #fff4e6;
+  --pink: #f8c8dc;
+  --chocolate: #8b5e3c;
+  --caramel: #e5a663;
+  --mint: #b8e0d2;
+  --white: #ffffff; /* ajouté pour le texte hero */
+}
+
+/* ===== Body ===== */
+body {
+  background-color: var(--cream);
+  color: var(--chocolate);
+  line-height: 1.6;
+}
+
+/* ===== Hero / Header ===== */
+/* Hero / Slideshow */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* plein écran */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slideshow {
+  display: flex; /* disposition horizontale */
+  width: calc(100% * 8); /* 8 images */
+  height: 100%;
+  transition: transform 1s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 12.5%; /* chaque slide = 1/8 de la largeur totale */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* couvre toute la zone */
+}
+
+.hero-text {
+  position: absolute;
+  z-index: 2;
+  text-align: center;
+  color: var(--white);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+
+.hero .cta-btn {
+  background-color: var(--caramel);
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.hero .cta-btn:hover {
+  background-color: var(--pink);
+}
+
+/* ===== Sections ===== */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* Produits / Cards */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.product-video {
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.product-video video {
+  width: 80%;
+  max-width: 800px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+.product-card {
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 250px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  color: var(--chocolate);
+  margin: 15px 0 10px;
+}
+
+.product-card p {
+  color: #555;
+  padding: 0 15px 15px;
+}
+
+/* À propos */
+.about {
+  background-color: var(--mint);
+  color: var(--chocolate);
+}
+
+.about h2 {
+  color: var(--pink);
+  margin-bottom: 20px;
+}
+
+/* Témoignages */
+.testimonials {
+  background-color: var(--cream);
+}
+
+.testimonial-card {
+  background-color: #fff;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 15px;
+  display: inline-block;
+  width: 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+  background-color: var(--chocolate);
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+footer a {
+  color: var(--caramel);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .products {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+}
+/* ===== Responsive Mobile ===== */
+@media (max-width: 480px) {
+  /* Hero */
+  .hero {
+    height: 60vh;
+    padding: 0 15px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero .cta-btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  /* Produits */
+  .products {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .product-card {
+    width: 90%;
+  }
+
+  /* Témoignages */
+  .testimonial-card {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  /* Footer */
+  footer {
+    padding: 50px 20px;
+    font-size: 0.9rem;
+  }
+
+  footer p {
+    margin: 10px 0;
+  }
+
+  footer a {
+    display: inline-block;
+    margin: 5px 10px;
+  }
+}
